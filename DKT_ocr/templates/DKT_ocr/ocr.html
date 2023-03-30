@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Application</title>
+</head>
+<body>
+    <h1>DKT오씨알오씌</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload Image</button>
+    </form>
+    {% if extracted_text %}
+    <h2>Extracted Text:</h2>
+    <pre>{{ extracted_text }}</pre>
+    {% endif %}
+</body>
+</html>
